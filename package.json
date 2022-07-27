@@ -1,0 +1,14 @@
+{
+  "name": "crm-projects",
+  "version": "1.0.0",
+  "description": "CRM projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yoqubov Bekmirza and Amriyev Sarvar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
