@@ -7,11 +7,9 @@ const helmet = require("helmet");
 const error_handler = require("./utils/errorHandler");
 const { errorMiddleware } = require("./middlewares/custom_error/error");
 const path = require("path")
-const admin_router = require("./routes/admin/adminbro");
 
 
 const app = express()
-
 // app.use(helmet());
 
 // Static folders
@@ -32,13 +30,12 @@ app.use(errorMiddleware)
 // Cors middleware
 app.use(cors({ origin: "*" }))
 
-// Routes 
-app.use("/api", api)
-app.use("/admin", admin_router)
-
 // Parsers
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+
+// Routes 
+app.use("/api", api)
 
 
 app.use(error_handler)
