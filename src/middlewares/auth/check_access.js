@@ -1,4 +1,4 @@
-const sequelize = require("../../sequlize/db");
+const sequelize = require("../../sequelize/db");
 const {
     user_roles,
     modules,

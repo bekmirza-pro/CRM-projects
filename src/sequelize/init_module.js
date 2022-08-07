@@ -1,5 +1,5 @@
 const sequelize = require("./db");
-const { roles } = sequelize.models;
+const { roles, modules } = sequelize.models;
 // const { generateHash } = require("../../src/modules/bcrypt");
 
 const admin_modules_data = [
@@ -28,6 +28,7 @@ module.exports = async () => {
   if (role_count == 0) {
     const roleArr = [
       { name: "admin", description: "Admin role ok" },
+      { name: "teacher", description: "Teacher role ok" },
       { name: "student", description: "Student role ok" },
     ];
 

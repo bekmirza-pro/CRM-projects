@@ -1,5 +1,6 @@
+
 const connections = async (sequelize) => {
-    const {users, roles, user_roles, groups, attendance, lessons} = sequelize.models 
+    const {users, roles, user_roles, groups, attendance, lessons, modules} = sequelize.models 
 
     await users.hasMany(user_roles, {
         foreignKey: "user_id",
@@ -48,6 +49,16 @@ const connections = async (sequelize) => {
 
      await lessons.belongsTo(users, {
         foreignKey: "teacher_id",
+        allowNull: false,
+    })
+
+    await roles.hasMany(modules, {
+        foreignKey: "role_id",
+        allowNull: false,
+    })
+
+     await modules.belongsTo(roles, {
+        foreignKey: "role_id",
         allowNull: false,
     })
  }

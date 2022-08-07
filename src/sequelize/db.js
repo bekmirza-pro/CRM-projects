@@ -11,7 +11,8 @@ const modelDefiners = [
   require('../sequelize/models/attendance/attendance'),
   require('../sequelize/models/lessons/lessons'),
   require('../sequelize/models/courses/course'),
-  require('../sequelize/models/payments/payments')
+  require('../sequelize/models/payments/payments'),
+  require('../sequelize/models/modules')
 ];
 
 const sequelize = new Sequelize(config.DB_CONNECTION_URL, {

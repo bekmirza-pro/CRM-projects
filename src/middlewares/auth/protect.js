@@ -21,9 +21,11 @@ const protect = async (req, res, next) => {
 
     const authorization = req.headers.authorization
 
+// console.log(authorization && authorization.startsWith("Bearer "));
     if (authorization && authorization.startsWith("Bearer ")) {
       authToken = authorization.split(" ")[1];
     }
+
     if (!authToken) throw new res.error(401, "Please login in to get access")
 
     const decodedToken = verify(authToken, JWT_KEY);
